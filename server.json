@@ -1,0 +1,216 @@
+{
+  "messages": [
+    {
+      "id": 11,
+      "channel": "sms",
+      "trigger": "abertura_conta",
+      "timer": "15:00",
+      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
+    },
+    {
+      "id": 21,
+      "channel": "sms",
+      "trigger": "fez_pix",
+      "timer": "5:00",
+      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
+    },
+    {
+      "id": 31,
+      "channel": "whatsapp",
+      "trigger": "abertura_conta",
+      "timer": "73:00",
+      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
+    },
+    {
+      "id": 1631312843768,
+      "channel": "whatsapp",
+      "trigger": "criou_chave_pix",
+      "timer": "12:00",
+      "message": "vI  que você criou um chave ?"
+    },
+    {
+      "id": 1631313726738,
+      "channel": "email",
+      "trigger": "fez_pix",
+      "timer": "2323",
+      "message": "23232323"
+    }
+  ],
+  "channels": [
+    {
+      "id": 111,
+      "name": "email"
+    },
+    {
+      "id": 222,
+      "name": "whatsapp"
+    },
+    {
+      "id": 333,
+      "name": "sms"
+    }
+  ],
+  "triggers": [
+    {
+      "id": 1,
+      "name": "abertura_conta"
+    },
+    {
+      "id": 2,
+      "name": "fez_pix"
+    },
+    {
+      "id": 3,
+      "name": "recarregou_celular"
+    },
+    {
+      "id": 4,
+      "name": "alterou_dados_pessois"
+    },
+    {
+      "id": 5,
+      "name": "consultou_saldo"
+    },
+    {
+      "id": 6,
+      "name": "fex_transferencia_outro_banco"
+    },
+    {
+      "id": 7,
+      "name": "deletou_chave_pix"
+    },
+    {
+      "id": 8,
+      "name": "criou_chave_pix"
+    },
+    {
+      "id": 9,
+      "name": "falou_com_atendimento"
+    }
+  ],
+  "openaccounts": [
+    {
+      "id": 1111,
+      "name": "Zapelino",
+      "amount": 2372
+    },
+    {
+      "id": 2222,
+      "name": "OI",
+      "amount": 1322
+    },
+    {
+      "id": 3333,
+      "name": "BRB",
+      "amount": 552
+    },
+    {
+      "id": 4444,
+      "name": "BRB Nação",
+      "amount": 1013
+    }
+  ],
+  "transactions": [
+    {
+      "id": 11111,
+      "amount": 1500,
+      "day":1
+    },
+    {
+      "id": 22222,
+      "amount": 11257,
+      "day":2
+    },
+    {
+      "id": 33333,
+      "amount": 3785,
+      "day":3
+    },
+    {
+      "id": 44444,
+      "amount": 1757,
+      "day":4
+    },
+    {
+      "id": 55555,
+      "amount": 5706,
+      "day":5
+    },
+    {
+      "id": 66666,
+      "amount": 6785,
+      "day":6
+    },
+    {
+      "id": 77777,
+      "amount": 4357,
+      "day":7
+    },
+    {
+      "id": 88888,
+      "amount": 9712,
+      "day":8
+    },
+    {
+      "id": 99999,
+      "amount": 2576,
+      "day":9
+    },
+    {
+      "id": 10110,
+      "amount": 3758,
+      "day":10
+    },
+    {
+      "id": 11011,
+      "amount": 6487,
+      "day":11
+    },
+    {
+      "id": 12112,
+      "amount": 1275,
+      "day":12
+    },
+    {
+      "id": 13113,
+      "amount": 4578,
+      "day":13
+    },
+    {
+      "id": 14114,
+      "amount": 7509,
+      "day":14
+    },
+    {
+      "id": 15115,
+      "amount": 9751,
+      "day":15
+    },
+    {
+      "id": 16116,
+      "amount": 10761,
+      "day":16
+    },
+    {
+      "id": 17117,
+      "amount": 8432,
+      "day":17
+    },
+    {
+      "id": 18118,
+      "amount": 6157,
+      "day":18
+    },
+    {
+      "id": 19119,
+      "amount": 5187,
+      "day":19
+    },
+    {
+      "id": 20120,
+      "amount": 7264,
+      "day":20
+    }
+    
+  ]
+}

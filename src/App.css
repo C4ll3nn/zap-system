@@ -1,0 +1,70 @@
+header {
+    display: flex;
+    justify-content:space-between;   
+}
+
+.headerContent {
+    max-width: 80%;
+    display: flex;    
+    align-items: center;
+    margin-left: 100px;
+    padding: 10px;
+    padding-left: 20%;
+    color: #fff;   
+}
+
+@media only screen and (max-width: 500px) {
+    .headerContent {
+        max-width: 80%;
+        display: flex;    
+        align-items: center;
+        margin-left: 100px;
+        padding: 10px;
+        color: #fff;   
+    }
+}
+
+a{
+    margin: 10px;
+    padding: 0 0 0 20px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #f2f556;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;    
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;  
+}
+
+.MuiButtonBase-root {
+    margin: 10px;
+}
+.graficoBarras {
+    max-width: 725px;
+    max-height: 350px;
+}
+
+.graficoLinha {
+    max-width: 725px;
+    max-height: 350px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}

@@ -1,15 +1,12 @@
 import CadastroMsg from "../../components/CadastroMsg";
 import { Container, FormControlLabel, Switch } from "@material-ui/core";
 import ConsultaMsg from "../../components/ConsultaMsg";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Header from "../../components/Header";
 
 function Mensagem() {
-  const [loading, setLoading] = useState(false);
   const [cadastro, setCadastro] = useState(false);
-
-  // const { cadastro } = useContext(CadastroContext);
-
+  
   return (
     <>
       <Header />

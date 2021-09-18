@@ -9,7 +9,7 @@ import {
   TableRow,
   Paper,
 } from "@material-ui/core";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import api from "../../services/api";
 
 const ConsultaMsg = () => {
@@ -32,14 +32,22 @@ const ConsultaMsg = () => {
     handleTable();
   }, [api]);
 
+  const dataReset = () => {
+    setTrigger("");
+    setChannel("");
+    setTimer("");
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const response = await api.get(
       `/messages?trigger_like=${trigger}&channel_like=${channel}&timer_like=${timer}`
     );
-
+    setLoading(true);
     setData(response.data);
+    dataReset();
+    setLoading(false);
   };
 
   const onClickShowMsg = (item) => {
@@ -82,12 +90,14 @@ const ConsultaMsg = () => {
           variant="outlined"
           size="small"
         />
+        {loading === true ? (
+        "Pesquisando ..."
+      ) : (
         <Button type="submit" variant="contained" color="primary">
           Pesquisar
-        </Button>
-        {/* <Button type="submit" variant="contained" color="inherit">
-        Cadastro
-      </Button> */}
+        </Button> 
+      )}
+               
       </form>
 
       <TableContainer component={Paper} elevation={3}>

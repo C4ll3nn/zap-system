@@ -32,8 +32,15 @@
       "id": 1631313726738,
       "channel": "email",
       "trigger": "fez_pix",
-      "timer": "2323",
+      "timer": "23:23",
       "message": "23232323"
+    },
+    {
+      "id": 1631990771604,
+      "channel": "sms",
+      "trigger": "upgrade_conta",
+      "timer": "1:00",
+      "message": "Sua conta recebeu upgrade com sucesso!"
     }
   ],
   "channels": [
@@ -114,103 +121,102 @@
     {
       "id": 11111,
       "amount": 1500,
-      "day":1
+      "day": 1
     },
     {
       "id": 22222,
       "amount": 11257,
-      "day":2
+      "day": 2
     },
     {
       "id": 33333,
       "amount": 3785,
-      "day":3
+      "day": 3
     },
     {
       "id": 44444,
       "amount": 1757,
-      "day":4
+      "day": 4
     },
     {
       "id": 55555,
       "amount": 5706,
-      "day":5
+      "day": 5
     },
     {
       "id": 66666,
       "amount": 6785,
-      "day":6
+      "day": 6
     },
     {
       "id": 77777,
       "amount": 4357,
-      "day":7
+      "day": 7
     },
     {
       "id": 88888,
       "amount": 9712,
-      "day":8
+      "day": 8
     },
     {
       "id": 99999,
       "amount": 2576,
-      "day":9
+      "day": 9
     },
     {
       "id": 10110,
       "amount": 3758,
-      "day":10
+      "day": 10
     },
     {
       "id": 11011,
       "amount": 6487,
-      "day":11
+      "day": 11
     },
     {
       "id": 12112,
       "amount": 1275,
-      "day":12
+      "day": 12
     },
     {
       "id": 13113,
       "amount": 4578,
-      "day":13
+      "day": 13
     },
     {
       "id": 14114,
       "amount": 7509,
-      "day":14
+      "day": 14
     },
     {
       "id": 15115,
       "amount": 9751,
-      "day":15
+      "day": 15
     },
     {
       "id": 16116,
       "amount": 10761,
-      "day":16
+      "day": 16
     },
     {
       "id": 17117,
       "amount": 8432,
-      "day":17
+      "day": 17
     },
     {
       "id": 18118,
       "amount": 6157,
-      "day":18
+      "day": 18
     },
     {
       "id": 19119,
       "amount": 5187,
-      "day":19
+      "day": 19
     },
     {
       "id": 20120,
       "amount": 7264,
-      "day":20
+      "day": 20
     }
-    
   ]
 }

@@ -4,8 +4,7 @@ header {
     margin-bottom: 20px;  
 }
 
-.headerContent {
-    max-width: 80%;
+.headerContent {    
     display: flex;    
     align-items: center;
     margin-left: 100px;
@@ -14,23 +13,30 @@ header {
     color: #fff;   
 }
 
-@media only screen and (max-width: 500px) {
+a{
+    margin: 10px;
+    padding: 0 0 0 10px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 540px) {
     .headerContent {
-        max-width: 80%;
         display: flex;    
         align-items: center;
         margin-left: 100px;
         padding: 10px;
         color: #fff;   
     }
-}
-
-a{
-    margin: 10px;
-    padding: 0 0 0 20px;
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
+    
+    a{
+        margin: 8px;
+        padding: 0 0 0 8px;
+        color: #fff;
+        font-size: 17px;
+        text-decoration: none;
+    }
 }
 
 a:hover{

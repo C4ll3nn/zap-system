@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 import api from "../../services/api";
 import * as yup from "yup";
+import Swal from 'sweetalert2';
 
 const schema = yup.object().shape({
   trigger: yup
@@ -49,16 +50,15 @@ function CadastroMsg({ onSubmitProp }) {
         message: message,
       });
 
-      alert("Cadastro realizado com sucesso!");
+      Swal.fire({icon: 'success', text:'Cadastro realizado com sucesso!', timer: 5000, confirmButtonColor: '#3f51b5'});
 
       dataReset();
 
       setLoading(false);
+      console.log(saveMsg.data);
     } catch (error) {
       alert(error);
     }
-
-    // onSubmitProp({ trigger, channel, timer, message });
   };
 
   return (
@@ -114,8 +114,8 @@ function CadastroMsg({ onSubmitProp }) {
         label="Mensagem"
         margin="normal"
         variant="outlined"
-        multiline="true"
-        fullWidth="true"
+        multiline
+        fullWidth
         minRows="3"
       />
     </form>

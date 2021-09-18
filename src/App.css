@@ -1,6 +1,7 @@
 header {
     display: flex;
-    justify-content:space-between;   
+    justify-content:space-between;
+    margin-bottom: 20px;  
 }
 
 .headerContent {
@@ -47,11 +48,9 @@ form {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;  
+    margin-bottom: 15px;
 }
 
-.MuiButtonBase-root {
-    margin: 10px;
-}
 .graficoBarras {
     max-width: 725px;
     max-height: 350px;

@@ -7,16 +7,14 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        {/* <Route path="/" exact render={() => <Home />} /> */}
+        
         <Route path="/" exact>
           <Dashboard />
         </Route>
 
         <Route path="/mensagens">
           <Mensagem />
-        </Route>
-
-        
+        </Route>        
 
         <Route>404 Not Found</Route>
       </Switch>

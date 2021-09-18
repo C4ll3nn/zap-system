@@ -1,6 +1,23 @@
 import { useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 import api from "../../services/api";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  trigger: yup
+    .string()
+    .required("Campo gatilho é obrigatório")
+    .min(4, "Gatilho é muito curto"),
+  channel: yup
+    .string()
+    .required("Campo é canal obrigatório")
+    .min(3, "Canal é muito curto"),
+  timer: yup.string().required("Campo timer é obrigatório"),
+  message: yup
+    .string()
+    .required("Campo mensagem é obrigatório")
+    .min(5, "Mensagem é muito curta"),
+});
 
 function CadastroMsg({ onSubmitProp }) {
   const [trigger, setTrigger] = useState("");
@@ -20,6 +37,8 @@ function CadastroMsg({ onSubmitProp }) {
     try {
       event.preventDefault();
 
+      await schema.validate({ trigger, channel, timer, message });
+
       setLoading(true);
 
       const saveMsg = await api.post("/messages", {
@@ -29,6 +48,8 @@ function CadastroMsg({ onSubmitProp }) {
         timer: timer,
         message: message,
       });
+
+      alert("Cadastro realizado com sucesso!");
 
       dataReset();
 
@@ -75,12 +96,14 @@ function CadastroMsg({ onSubmitProp }) {
         variant="outlined"
         size="small"
       />
-      <Button type="submit" variant="contained" color="primary">
-        Cadastrar
-      </Button>
-      <Button type="submit" variant="contained" color="inherit">
-        Voltar
-      </Button>
+      {loading === true ? (
+        "Salvando ..."
+      ) : (
+        <Button type="submit" variant="contained" color="primary">
+          Cadastrar
+        </Button>
+      )}
+
       <br />
       <TextField
         value={message}

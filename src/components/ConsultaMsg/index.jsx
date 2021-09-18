@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 import { useEffect, useState, useContext } from "react";
 import api from "../../services/api";
-import { CadastroContext } from "../../providers/Cadastro";
 
 const ConsultaMsg = () => {
   const [trigger, setTrigger] = useState("");
@@ -19,8 +18,6 @@ const ConsultaMsg = () => {
   const [timer, setTimer] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const { setCadastro } = useContext(CadastroContext);
 
   const handleTable = async () => {
     try {
@@ -33,7 +30,7 @@ const ConsultaMsg = () => {
 
   useEffect(() => {
     handleTable();
-  }, []);
+  }, [api]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -88,9 +85,9 @@ const ConsultaMsg = () => {
         <Button type="submit" variant="contained" color="primary">
           Pesquisar
         </Button>
-        <Button type="submit" variant="contained" color="inherit">
+        {/* <Button type="submit" variant="contained" color="inherit">
         Cadastro
-      </Button>
+      </Button> */}
       </form>
 
       <TableContainer component={Paper} elevation={3}>

@@ -1,25 +1,38 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import api from "../../services/api";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const GraficoBarras = () => {
-  const [apiData, setApiData] = useState([]);
-  const getApiData = async () => {
+  const [apiData, setApiData] = useState([]);  
+
+  const handleApiData = async () => {
     try {
-      const response = await api.get("/messages");
-      setApiData(response.data);
+      const response = await api.get("/openaccounts");
+      setApiData(response.data);      
     } catch (error) {
       alert(error);
     }
   };
 
+  const name = apiData.map((item) => {
+    return item.name;
+  });
+
+  const amount = apiData.map((item) => {
+    return item.amount;
+  });
+
+  useEffect(() => {
+    handleApiData();
+  }, []);
+
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Purple"],
+    labels: name,
     datasets: [
       {
         label: "Quantidade de contas abertas",
-        data: [12, 19, 3, 5],
+        data: amount,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",

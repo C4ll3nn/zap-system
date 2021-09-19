@@ -1,25 +1,38 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import api from "../../services/api";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const GraficoLinha = () => {
   const [apiData, setApiData] = useState([]);
-  const getApiData = async () => {
+
+  const handleApiData = async () => {
     try {
-      const response = await api.get("/messages");
+      const response = await api.get("/transactions");
       setApiData(response.data);
     } catch (error) {
       alert(error);
     }
   };
 
+  const day = apiData.map((item) => {
+    return item.day;
+  });
+
+  const amount = apiData.map((item) => {
+    return item.amount;
+  });
+
+  useEffect(() => {
+    handleApiData();
+  }, []);
+
   const data = {
-    labels: ["1", "2", "3", "4", "5", "6"],
+    labels: day,
     datasets: [
       {
         label: "Quantidade de transações PIX",
-        data: [12, 19, 3, 5, 2, 3],
+        data: amount,
         fill: false,
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgba(255, 99, 132, 0.2)",

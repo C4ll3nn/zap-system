@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import Swal from 'sweetalert2';
 
 const ConsultaMsg = () => {
   const [trigger, setTrigger] = useState("");
@@ -30,7 +31,7 @@ const ConsultaMsg = () => {
 
   useEffect(() => {
     handleTable();
-  }, [api]);
+  }, []);
 
   const dataReset = () => {
     setTrigger("");
@@ -50,8 +51,13 @@ const ConsultaMsg = () => {
     setLoading(false);
   };
 
-  const onClickShowMsg = (item) => {
-    alert(item.message);
+  const onClickShowMsg = (item) => {    
+    Swal.fire({
+      title: "Mensagem:",
+      text: item.message,
+      showCloseButton: true,
+      showConfirmButton: false
+    });
   };
 
   return (

@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
-import Home from "../pages/Home";
 import Mensagem from "../pages/Mensagem";
 
 const Routes = () => {

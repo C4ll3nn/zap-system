@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 import api from "../../services/api";
 import * as yup from "yup";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const schema = yup.object().shape({
   trigger: yup
@@ -50,7 +50,19 @@ function CadastroMsg({ onSubmitProp }) {
         message: message,
       });
 
-      Swal.fire({icon: 'success', text:'Cadastro realizado com sucesso!', timer: 5000, confirmButtonColor: '#3f51b5'});
+      Swal.fire({
+          icon: "success",
+          text: "Cadastro realizado com sucesso!",
+          toast: true,
+          position: 'center',
+          showConfirmButton: false,
+          timer: 5000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+      });
 
       dataReset();
 

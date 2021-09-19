@@ -57,14 +57,23 @@ form {
     margin-bottom: 15px;
 }
 
+label span {
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+}
+
 .graficoBarras {
-    max-width: 725px;
+    display: flex;
+    max-width: 705px;
     max-height: 350px;
+    justify-content: center;
 }
 
 .graficoLinha {
-    max-width: 725px;
+    display: flex;
+    max-width: 705px;
     max-height: 350px;
+    justify-content: center;
 }
 
 .dashboard {

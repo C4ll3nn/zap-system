@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,8 +9,26 @@ function Header() {
         <Typography variant="h5" component="h1" className="headerContent">
           ZAP SYSTEM
         </Typography>
-        <Link to="/mensagens">Mensagens</Link>
-        <Link to="/">Dashboard</Link>
+        <NavLink
+          to="/" exact
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "#f2f556"
+          }}
+        >
+          Dashboard
+        </NavLink>
+        <NavLink
+          to="/mensagens"
+          activeClassName="selected"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "#f2f556"
+          }}
+        >
+          Mensagens
+        </NavLink>
       </Toolbar>
     </AppBar>
   );

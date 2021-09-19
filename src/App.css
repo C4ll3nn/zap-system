@@ -13,6 +13,13 @@ header {
     color: #fff;   
 }
 
+.msgTitle {
+    color: black !important;
+    font-weight: bold !important;
+    display:flex;
+    justify-content: space-around;
+}
+
 a{
     margin: 10px;
     padding: 0 0 0 10px;
@@ -54,7 +61,7 @@ form {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-evenly;  
+    justify-content: space-between;  
     margin-bottom: 15px;
 }
 

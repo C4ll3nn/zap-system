@@ -13,7 +13,10 @@ const schema = yup.object().shape({
     .string()
     .required("Campo é canal obrigatório")
     .min(3, "Canal é muito curto"),
-  timer: yup.string().required("Campo timer é obrigatório"),
+  timer: yup
+    .string()
+    .required("Campo timer é obrigatório")
+    .min(5, "Utilize o formato 00:00"),
   message: yup
     .string()
     .required("Campo mensagem é obrigatório")
@@ -79,7 +82,11 @@ function CadastroMsg({ onSubmitProp }) {
       dataReset();
       setLoading(false);
     } catch (error) {
-      Swal.fire({ text: error.errors[0], confirmButtonColor: "#3f51b5" });
+      Swal.fire({
+        text: error.errors[0],
+        icon: "error",
+        confirmButtonColor: "#3f51b5",
+      });
     }
   };
 

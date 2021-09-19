@@ -7,7 +7,7 @@ function Dashboard() {
     <div>
       <Header />
       <div className="dashboard">
-        <h3>Contas Abertas - BOT</h3>
+        <h2>Contas Abertas - BOT</h2>
         <GraficoBarras />
         <GraficoLinha />
       </div>

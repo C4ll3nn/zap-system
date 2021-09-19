@@ -1,12 +1,12 @@
 import CadastroMsg from "../../components/CadastroMsg";
-import { Container, FormControlLabel, Switch } from "@material-ui/core";
+import { Container, Button, Typography } from "@material-ui/core";
 import ConsultaMsg from "../../components/ConsultaMsg";
 import { useState } from "react";
 import Header from "../../components/Header";
 
 function Mensagem() {
   const [cadastro, setCadastro] = useState(false);
-  
+
   return (
     <>
       <Header />
@@ -16,19 +16,33 @@ function Mensagem() {
         align="center"
         maxWidth="md"
       >
-        <FormControlLabel
-          label="Cadastro"
-          control={
-            <Switch
-              checked={cadastro}
-              onChange={(event) => {
-                setCadastro(event.target.checked);
+        {cadastro === true ? (
+          <Typography variant="h5" component="h1" className="msgTitle">
+            Cadastro de Mensagens
+            <Button
+              onClick={() => {
+                setCadastro(false);
               }}
-              name="cadastro"
-              color="primary"
-            />
-          }
-        />
+              variant="contained"
+              color='inherit'
+            >
+              Ir para Pesquisa
+            </Button>
+          </Typography>
+        ) : (
+          <Typography variant="h5" component="h1" className="msgTitle">
+            Consulta de Mensagens
+            <Button
+              onClick={() => {
+                setCadastro(true);
+              }}
+              variant="contained"
+              color='inherit'
+            >
+              Ir para Cadastro
+            </Button>
+          </Typography>
+        )}
         {!cadastro && <ConsultaMsg />}
         {cadastro && <CadastroMsg />}
       </Container>

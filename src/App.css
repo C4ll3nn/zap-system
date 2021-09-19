@@ -9,7 +9,7 @@ header {
     align-items: center;
     margin-left: 100px;
     padding: 10px;
-    padding-left: 20%;
+    padding-left: 25%;
     color: #fff;   
 }
 
@@ -28,7 +28,7 @@ a{
     text-decoration: none;
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 570px) {
     .headerContent {
         display: flex;    
         align-items: center;

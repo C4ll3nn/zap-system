@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const ConsultaMsg = () => {
   const [trigger, setTrigger] = useState("");
@@ -25,7 +25,7 @@ const ConsultaMsg = () => {
       const response = await api.get("/messages");
       setData(response.data);
     } catch (error) {
-      alert(error);
+      Swal.fire({ text: error.errors[0], confirmButtonColor: "#3f51b5" });
     }
   };
 
@@ -51,12 +51,12 @@ const ConsultaMsg = () => {
     setLoading(false);
   };
 
-  const onClickShowMsg = (item) => {    
+  const onClickShowMsg = (item) => {
     Swal.fire({
       title: "Mensagem:",
       text: item.message,
       showCloseButton: true,
-      showConfirmButton: false
+      showConfirmButton: false,
     });
   };
 
@@ -95,15 +95,18 @@ const ConsultaMsg = () => {
           margin="normal"
           variant="outlined"
           size="small"
+          placeholder="00:00"
+          inputProps={{ maxLength: 5 }}
         />
         {loading === true ? (
-        "Pesquisando ..."
-      ) : (
-        <Button type="submit" variant="contained" color="primary">
-          Pesquisar
-        </Button> 
-      )}
-               
+          <Button type="submit" variant="contained" color="primary" disabled>
+            Pesquisando...
+          </Button>
+        ) : (
+          <Button type="submit" variant="contained" color="primary">
+            Pesquisar
+          </Button>
+        )}
       </form>
 
       <TableContainer component={Paper} elevation={3}>
@@ -127,7 +130,7 @@ const ConsultaMsg = () => {
                 </TableCell>
                 <TableCell align="center">{item.channel}</TableCell>
                 <TableCell align="center">{item.timer}</TableCell>
-                
+
                 <TableCell align="center">
                   <Button
                     variant="contained"

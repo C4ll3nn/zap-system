@@ -27,14 +27,15 @@ a{
         align-items: center;
         margin-left: 100px;
         padding: 10px;
-        color: #fff;   
+        color: #fff;
+        font-size: 18px !important; 
     }
     
     a{
         margin: 8px;
         padding: 0 0 0 8px;
         color: #fff;
-        font-size: 17px;
+        font-size: 16px;
         text-decoration: none;
     }
 }

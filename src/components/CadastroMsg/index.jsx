@@ -34,6 +34,18 @@ function CadastroMsg({ onSubmitProp }) {
     setMessage("");
   };
 
+  const setTimerMask = (textNumber) => {
+    let timerRaw = textNumber.replace(/\D/g, "");
+    let timerMask = [...timerRaw]
+      .map((symbol, i) => {
+        if (i === 2) return [":", symbol];
+        return symbol;
+      })
+      .flat(1)
+      .join("");
+    setTimer(timerMask);
+  };
+
   const onSubmit = async (event) => {
     try {
       event.preventDefault();
@@ -51,25 +63,23 @@ function CadastroMsg({ onSubmitProp }) {
       });
 
       Swal.fire({
-          icon: "success",
-          text: "Cadastro realizado com sucesso!",
-          toast: true,
-          position: 'center',
-          showConfirmButton: false,
-          timer: 5000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-          }
+        icon: "success",
+        text: "Cadastro realizado com sucesso!",
+        toast: true,
+        position: "center",
+        showConfirmButton: false,
+        timer: 5000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       });
 
       dataReset();
-
       setLoading(false);
-      console.log(saveMsg.data);
     } catch (error) {
-      alert(error);
+      Swal.fire({ text: error.errors[0], confirmButtonColor: "#3f51b5" });
     }
   };
 
@@ -100,16 +110,20 @@ function CadastroMsg({ onSubmitProp }) {
       <TextField
         value={timer}
         onChange={(event) => {
-          setTimer(event.target.value);
+          setTimerMask(event.target.value);
         }}
         id="timer"
         label="Timer"
         margin="normal"
         variant="outlined"
         size="small"
+        placeholder="00:00"
+        inputProps={{ maxLength: 5 }}
       />
       {loading === true ? (
-        "Salvando ..."
+        <Button type="submit" variant="contained" color="primary" disabled>
+          Salvando...
+        </Button>
       ) : (
         <Button type="submit" variant="contained" color="primary">
           Cadastrar
